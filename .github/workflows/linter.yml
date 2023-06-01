@@ -10,4 +10,4 @@ jobs:
       - name: checkout code
         uses : actions/checkout@v2
       - name: run linter
-        uses: github/super-linter@v2
+        uses: uses: super-linter/super-linter@v5.0.0
