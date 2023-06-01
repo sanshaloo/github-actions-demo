@@ -1,0 +1,16 @@
+name: github-actions-demo
+
+on: push
+
+jobs: 
+  super-lint:
+    name: yaml lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses : actios/checkout@v2
+      - name: run linter
+        uses: github/super-linter@v2
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{secret.GITHUB_TOKEN}}
