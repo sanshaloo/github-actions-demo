@@ -1,6 +1,9 @@
 ---
 name: github-actions-demo
 
+on: 
+  workflow_dispatch:
+
 jobs:
   super-lint:
     name: Lint code base
