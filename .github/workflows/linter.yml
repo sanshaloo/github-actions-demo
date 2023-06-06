@@ -1,10 +1,10 @@
 ---
 name: github-actions-demo
 
-on: 
+on:
   workflow_dispatch:
 
-jobs: 
+jobs:
   build:
     name: Lint code base
     runs-on: ubuntu-latest
@@ -15,12 +15,11 @@ jobs:
 
   steps:
     - name: checkout code
-      - name: checkout code
-        uses : actions/checkout@v3
-      - with: 
-        fetch-depth: 0
-      - name: run linter
-        uses: github/super-linter@v5
-        env:
-          VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: master
+      uses: actions/checkout@v3
+    - with:
+      fetch-depth: 0
+    - name: run linter
+      uses: github/super-linter@v5
+      env:
+        VALIDATE_ALL_CODEBASE: false
+        DEFAULT_BRANCH: master
